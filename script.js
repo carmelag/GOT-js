@@ -1,8 +1,16 @@
 const { PrismaClient } = require('@prisma/client')
+const chalk = require('chalk');
+
 
 const prisma = new PrismaClient()
 
 var cmd = process.argv[2];
+
+
+console.log(chalk.blue('This is a simple CLI in node js to test Prisma with mysql DB.\nYou can perform the following actions:'));
+console.log(chalk.magenta('1. Write an array of Game of Thrones Characters to the DB. Plaease run: ') + chalk.red('npm run dev writeDB'));
+console.log(chalk.magenta('2. Find out the real name of Jon Snow. Please run: ') + chalk.red('npm run dev updateDB'));
+console.log(chalk.magenta('3. See all the characters stored within the DB. Please run: ') + chalk.red('npm run dev readDB'));
 
 var allCharacters = [
   {
@@ -31,51 +39,46 @@ var allCharacters = [
   }
 ];
 
-//Create new GOT characters
-async function createPrismaCharacter(personOfGOT) {
-  const currentPerson = await prisma.charachter.create({
-    data: {
-      id: personOfGOT.id,
-      age: personOfGOT.age,
-      name: personOfGOT.name,
-      surname: personOfGOT.surname,
-      status: personOfGOT.socialStatus,
-      gender: personOfGOT.gender
-    }
-  });
-  console.log(`Created character is: ${currentPerson.name}`);
-}
-
-async function updatePrismaCharacter(newName) {
-  //Update a GOT character 
-  const nameUpdated = await prisma.charachter.update({
-    where: { id: 1 },
-    data: {
-      name: newName,
-      surname: " Targaryen"
-    }
-  });
-  console.log(`WOW...Jon Snow's actual name is ${nameUpdated.name} ${nameUpdated.surname}!`);
-}
 
 // A `main` function so that we can use async/await
-function main() {
+async function main() {
   try {
     switch (cmd) {
+      //Create new GOT characters
       case "writeDB":
-        console.log("writing");
-        allCharacters.forEach(person => {
-          try {
-            createPrismaCharacter(person);
-          } catch (e) {
-            console.error(e);
-          }
-        });
+        console.log("writing the DB...");
+        for (let index = 0; index < allCharacters.length; index++) {
+          const personOfGOT = allCharacters[index];
+          const currentPerson = await prisma.charachter.create({
+            data: {
+              id: personOfGOT.id,
+              age: personOfGOT.age,
+              name: personOfGOT.name,
+              surname: personOfGOT.surname,
+              status: personOfGOT.socialStatus,
+              gender: personOfGOT.gender
+            }
+          });
+          console.log(`Created character is: ${currentPerson.name}`);
+        }
         break;
       case "updateDB":
-        console.log("updating");
-        updatePrismaCharacter();
+        console.log("updating the DB...");
+        //Update a GOT character, Jon Snow, with his real name
+        const nameUpdated = await prisma.charachter.update({
+          where: { id: 1 },
+          data: {
+            name: "Aegon",
+            surname: " Targaryen"
+          }
+        });
+        console.log(`WOW...Jon Snow's actual name is ${nameUpdated.name} ${nameUpdated.surname}!`);
         break;
+      case "readDB":
+        //Read the DB and returns everything
+        console.log("reading the DB...");
+        const all = await prisma.charachter.findMany();
+        console.log(all);
       default:
       // code block
     }
@@ -86,4 +89,8 @@ function main() {
 
 }
 
-main();
+main()
+  .catch(e => console.error(e))
+  .finally(async () => {
+    await prisma.disconnect()
+  })
