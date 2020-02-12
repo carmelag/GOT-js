@@ -42,6 +42,6 @@ prisma2 generate
 Execute the script with these commands: 
 
 
-1. __`npm run dev writeDB`__   Write an array of Game of Thrones Characters to the DB
-2. __`npm run dev updateDB`__    Find out the real name of Jon Snow (Spoiler Alert!)
-3. __`npm run dev readDB`__   See all the characters stored within the DB
+   1. __`npm run dev writeDB`__   Write an array of Game of Thrones Characters to the DB
+   2. __`npm run dev updateDB`__    Find out the real name of Jon Snow (Spoiler Alert!)
+   3. __`npm run dev readDB`__   See all the characters stored within the DB
