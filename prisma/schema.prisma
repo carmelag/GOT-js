@@ -10,7 +10,7 @@ generator client {
 model charachter {
   age     Int
   gender  String
-  id      Int @id @unique
+  id      Int @id
   name    String
   status  String
   surname String

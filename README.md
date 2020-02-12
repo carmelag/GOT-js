@@ -2,7 +2,7 @@
 
 This Node.js example uses the [Prisma Client](https://github.com/prisma/prisma2/blob/master/docs/prisma-client-js/api.md) in a **simple Node.js script** to write, update and read data from a mysql database. Mysql database runs locally on localhost:3306 ports.
 
-The example was built on top of this [javascript script](https://github.com/prisma/prisma-examples/tree/prisma2/javascript/script)
+The example was built on top of this [javascript script](https://github.com/prisma/prisma-examples/tree/prisma2/javascript/script) provided by Prisma.
 
 The script is a simple CLI to perform some basic operations on the DB through the Prisma Client. 
 The actions are specified by the argument passed together with the node command to start the script.
