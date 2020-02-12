@@ -26,10 +26,15 @@ Install npm dependencies:
 ```
 cd GOT-js
 npm install
+
 ```
 
-Note that this also generates Prisma Client JS into `node_modules/@prisma/client` via a `postinstall` hook of the `@prisma/client` package from your `package.json`.
+Note that this also generates Prisma Client JS into `node_modules/@prisma/client` via a `postinstall` hook of the `@prisma/client` package from your `package.json`. If you have issue with this try the following:
 
+```
+npm install -g prisma2
+prisma2 generate
+```
 
 ### 2. Run the script
 
