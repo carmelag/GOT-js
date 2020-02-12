@@ -11,9 +11,10 @@ The actions are specified by the argument passed together with the node command 
 ## How to use
 
 ### 1. Create the DB locally
+
 Recreate the Characters DB using the [SQL dump](https://gist.github.com/carmelag/0492aa6251923560d94c43fa75e1887e) on your mysql server on your machine.
 
-### 1. Download example & install dependencies
+### 2. Download the example & install dependencies
 
 Clone this repository:
 
@@ -36,7 +37,7 @@ npm install -g prisma2
 prisma2 generate
 ```
 
-### 2. Run the script
+### 3. Run the script
 
 Execute the script with these commands: 
 
