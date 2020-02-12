@@ -14,7 +14,7 @@ console.log(chalk.magenta('3. See all the characters stored within the DB. Pleas
 
 var allCharacters = [
   {
-    id: 1, name: "Jon", surname: "Snow", age: 28, socialStatus: "SINGLE", gender: "MALE"
+    id: 1, name: "Jon", surname: "Snow", age: 22, socialStatus: "SINGLE", gender: "MALE"
   },
   {
     id: 2, name: "Arya", surname: "Stark", age: 17, socialStatus: "SINGLE", gender: "FEMALE"
@@ -29,10 +29,10 @@ var allCharacters = [
     id: 5, name: "Sansa", surname: "Stark", age: 24, socialStatus: "MARRIED", gender: "FEMALE"
   },
   {
-    id: 6, name: "Cercei", surname: "Lannister", age: 43, socialStatus: "WIDOWER", gender: "FEMALE"
+    id: 6, name: "Cercei", surname: "Lannister", age: 37, socialStatus: "WIDOWER", gender: "FEMALE"
   },
   {
-    id: 7, name: "Theon", surname: "Greyjoy", age: 28, socialStatus: "SINGLE", gender: "MALE"
+    id: 7, name: "Theon", surname: "Greyjoy", age: 22, socialStatus: "SINGLE", gender: "MALE"
   },
   {
     id: 8, name: "Oberyn", surname: "Martel", age: 45, socialStatus: "MARRIED", gender: "MALE"
