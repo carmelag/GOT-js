@@ -30,7 +30,8 @@ npm install
 
 ```
 
-Note that this also generates Prisma Client JS into `node_modules/@prisma/client` via a `postinstall` hook of the `@prisma/client` package from your `package.json`. If you have issue with this try the following:
+*npm install* should install Prisma Client JS into `node_modules/@prisma/client` via a `postinstall` hook of the `@prisma/client` package from your `package.json`. 
+Anyway, if you have issue with this and get an error message related to missing Prisma Client, please run the following commands:
 
 ```
 npm install -g prisma2
