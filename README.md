@@ -12,7 +12,7 @@ The actions are specified by the argument passed together with the node command 
 
 ### 1. Create the DB locally
 
-Recreate the Characters DB using the [SQL dump](https://gist.github.com/carmelag/0492aa6251923560d94c43fa75e1887e) on your mysql server on your machine.
+Recreate the Characters DB using the [SQL dump](https://gist.github.com/carmelag/0492aa6251923560d94c43fa75e1887e) on your mysql server on your machine. The DB has a single table called "character". It will be filled with some Game of Thrones characters coming from an array built in the *script.js* file. 
 
 ### 2. Download the example & install dependencies
 
