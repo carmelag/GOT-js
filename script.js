@@ -1,7 +1,7 @@
 const { PrismaClient } = require('@prisma/client')
 const chalk = require('chalk');
 
-
+//Prisma Client creation
 const prisma = new PrismaClient()
 
 var cmd = process.argv[2];
